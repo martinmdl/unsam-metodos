@@ -20,7 +20,7 @@ while(i < n):
     if(i % 2 == 0):
         x = f(x)
     else:
-        x = g(x)    
+        x = g(x)
     i += 1
 
 print(f"RESULTADO: {x}")
