@@ -7,8 +7,7 @@
 import math
 
 def f(x):
-    # return x**3 + x - 10
-    return x**2 - 2
+    return x**3 + x - 10
 
 def signo(a, b):
     return f(a) * f(b)
@@ -21,23 +20,20 @@ def triseccion(a, b, epsilon):
         primer_tercio = a + tercio
         segundo_tercio = b - tercio
 
-        # segmento 1
-        if signo(a, primer_tercio) < 0:
+        if signo(a, primer_tercio) <= 0:
             b = primer_tercio
 
-        # segmento 2
-        elif signo(primer_tercio, segundo_tercio) < 0:
+        elif signo(primer_tercio, segundo_tercio) <= 0:
             a = primer_tercio
             b = segundo_tercio
         
-        # segmento 3
-        elif signo(segundo_tercio, b) < 0:
+        elif signo(segundo_tercio, b) <= 0:
             a = segundo_tercio
             
     return (a + b) / 2
 
-a, b = [1, 2]
-epsilon = 0.01
+a, b = [1, 4]
+epsilon = 0.001
 
 raiz = triseccion(a, b, epsilon)
 print(f"Raiz: {raiz:.2f}")
