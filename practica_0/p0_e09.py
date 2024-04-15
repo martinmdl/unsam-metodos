@@ -16,7 +16,7 @@ def triseccion(a, b, epsilon):
     
     while b - a >= epsilon:
 
-        tercio = abs(b - a) / 3 # | b - a |
+        tercio = abs(b - a) / 3
         primer_tercio = a + tercio
         segundo_tercio = b - tercio
 
