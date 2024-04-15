@@ -7,30 +7,37 @@
 import math
 
 def f(x):
-    return x**3 + x - 10
+    # return x**3 + x - 10
+    return x**2 - 2
 
-a, b = [-50, 50]
-epsilon = 0.01
+def signo(a, b):
+    return f(a) * f(b)
 
-# biseccion (metodo de parada: error absoluto)
 def triseccion(a, b, epsilon):
-    media = 1
+    
+    while b - a >= epsilon:
 
-    while(b - a >= epsilon):
-
-        tercio = abs(b - a) / 3
+        tercio = abs(b - a) / 3 # | b - a |
         primer_tercio = a + tercio
-        segundo_tercio = primer_tercio + tercio
+        segundo_tercio = b - tercio
 
-        if(f(primer_tercio) > 0): b = primer_tercio
-        else:
-            if(f(segundo_tercio) < 0): a = segundo_tercio
-            else:
-                a = primer_tercio
-                b = segundo_tercio
+        # segmento 1
+        if signo(a, primer_tercio) < 0:
+            b = primer_tercio
+
+        # segmento 2
+        elif signo(primer_tercio, segundo_tercio) < 0:
+            a = primer_tercio
+            b = segundo_tercio
+        
+        # segmento 3
+        elif signo(segundo_tercio, b) < 0:
+            a = segundo_tercio
             
-    media = (primer_tercio + segundo_tercio) / 2
-    return media
+    return (a + b) / 2
+
+a, b = [1, 2]
+epsilon = 0.01
 
 raiz = triseccion(a, b, epsilon)
 print(f"Raiz: {raiz:.2f}")
