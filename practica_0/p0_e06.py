@@ -1,6 +1,10 @@
 # input: dos reales a, b tales que a < b y f(a)*f(b) < 0, y un real epsilon > 0
 # 6. Aplicar el método de bisección para hallar una aproximación de un x que cumpla x^2 + x = 12. Calcular luego el valor exacto de otra manera, y comparar.
 
+# ERROR DE CONSIGNA
+# 7. Aplicar el método de bisección para aproximar un x que cumpla cos(x) = -1,
+# con error menor que epsilon = 1/10. Notar que esto sirve para encontrar aproximaciones de pi.
+
 def f(x):
     return x**2 + x
 

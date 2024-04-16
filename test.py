@@ -1,14 +1,13 @@
 import math
 
-def f():
-    return 1, 2
 
-a, b = f()
+a, b = [1, 4]
+
+a = abs(a)
+b = abs(b)
+
+tercio = abs(b) - abs(a) / 3
+
 print(f"RESULTADO A: {a}")
-print(f"RESULTADO B: {b}")
 
-# def signo(fx):
-#     if(fx > 0):
-#         return 1
-#     else:
-#         return -1
+print(f"RESULTADO B: {b}")

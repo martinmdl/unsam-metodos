@@ -14,7 +14,7 @@ def signo(a, b):
 
 def triseccion(a, b, epsilon):
     
-    while b - a >= epsilon:
+    while abs(b - a) >= epsilon:
 
         tercio = abs(b - a) / 3
         primer_tercio = a + tercio
